@@ -17,7 +17,7 @@ module mojo_top (
     input io_button [5],    // 5 buttons on IO Shield
     input io_dip [3][8],     // DIP switches on IO Shield
     input button,
-    output ext_led[3]
+    output ext_led[3]       // Output pins to the adder
   ) {
   
   sig rst;                  // reset signal
@@ -26,7 +26,7 @@ module mojo_top (
     // The reset conditioner is used to synchronize the reset signal to the FPGA
     // clock. This ensures the entire FPGA comes out of reset at the same time.
     reset_conditioner reset_cond;
-    blinker myBlinker(.rst(rst));
+    blinker myBlinker(.rst(rst)); // Create new blinker circuit
   }
   
   always {
@@ -42,6 +42,6 @@ module mojo_top (
     io_seg = 8hff;          // turn segments off
     io_sel = 4hf;           // select no digits
     
-    ext_led = myBlinker.blink;
+    ext_led = myBlinker.blink; // Assign output of blinker circuit to output pins
   }
 }

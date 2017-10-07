@@ -1,15 +1,15 @@
 module blinker (
     input clk,  // clock
     input rst,  // reset
-    output blink[3]
+    output blink[3] // Output array representing inputs to adder
   ) {
 
-  dff counter[28](.clk(clk), .rst(rst));
+  dff counter[28](.clk(clk), .rst(rst)); // 28 bit D flip-flop for slower accumulation
   
   always {
-    blink[0] = counter.q[27];
+    blink[0] = counter.q[27]; // Assign outputs of flip-flop to blink
     blink[1] = counter.q[26];
     blink[2] = counter.q[25];
-    counter.d = counter.q + 1;
+    counter.d = counter.q + 1; // Increase value in flip-flop
   }
 }
