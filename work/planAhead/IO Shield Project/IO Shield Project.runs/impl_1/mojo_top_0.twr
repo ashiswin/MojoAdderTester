@@ -1,0 +1,1618 @@
+--------------------------------------------------------------------------------
+Release 14.7 Trace  (nt)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+C:\Xilinx\14.7\ISE_DS\ISE\bin\nt\unwrapped\trce.exe -intstyle ise -o
+mojo_top_0.twr -v 30 -l 30 mojo_top_0_routed.ncd mojo_top_0.pcf
+
+Design file:              mojo_top_0_routed.ncd
+Physical constraint file: mojo_top_0.pcf
+Device,package,speed:     xc6slx9,tqg144,C,-2 (PRODUCTION 1.23 2013-10-13)
+Report level:             verbose report, limited to 30 items per constraint
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+================================================================================
+Timing constraint: TS_clk = PERIOD TIMEGRP "clk" 50 MHz HIGH 50%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 437 paths analyzed, 125 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is   2.666ns.
+--------------------------------------------------------------------------------
+Slack:                  17.629ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               myBlinker/M_counter_q_0 (FF)
+  Destination:          myBlinker/M_counter_q_27 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      2.330ns (Levels of Logic = 7)
+  Clock Path Skew:      -0.006ns (0.332 - 0.338)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: myBlinker/M_counter_q_0 to myBlinker/M_counter_q_27
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X4Y7.AQ        Tcko                  0.525   myBlinker/M_counter_q[3]
+                                                       myBlinker/M_counter_q_0
+    SLICE_X4Y7.A5        net (fanout=1)        0.456   myBlinker/M_counter_q[0]
+    SLICE_X4Y7.COUT      Topcya                0.474   myBlinker/M_counter_q[3]
+                                                       myBlinker/Mcount_M_counter_q_lut<0>_INV_0
+                                                       myBlinker/Mcount_M_counter_q_cy<3>
+    SLICE_X4Y8.CIN       net (fanout=1)        0.082   myBlinker/Mcount_M_counter_q_cy[3]
+    SLICE_X4Y8.COUT      Tbyp                  0.093   myBlinker/M_counter_q[7]
+                                                       myBlinker/Mcount_M_counter_q_cy<7>
+    SLICE_X4Y9.CIN       net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[7]
+    SLICE_X4Y9.COUT      Tbyp                  0.093   myBlinker/M_counter_q[11]
+                                                       myBlinker/Mcount_M_counter_q_cy<11>
+    SLICE_X4Y10.CIN      net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[11]
+    SLICE_X4Y10.COUT     Tbyp                  0.093   myBlinker/M_counter_q[15]
+                                                       myBlinker/Mcount_M_counter_q_cy<15>
+    SLICE_X4Y11.CIN      net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[15]
+    SLICE_X4Y11.COUT     Tbyp                  0.093   myBlinker/M_counter_q[19]
+                                                       myBlinker/Mcount_M_counter_q_cy<19>
+    SLICE_X4Y12.CIN      net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[19]
+    SLICE_X4Y12.COUT     Tbyp                  0.093   myBlinker/M_counter_q[23]
+                                                       myBlinker/Mcount_M_counter_q_cy<23>
+    SLICE_X4Y13.CIN      net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[23]
+    SLICE_X4Y13.CLK      Tcinck                0.313   M_counter_q_27
+                                                       myBlinker/Mcount_M_counter_q_xor<27>
+                                                       myBlinker/M_counter_q_27
+    -------------------------------------------------  ---------------------------
+    Total                                      2.330ns (1.777ns logic, 0.553ns route)
+                                                       (76.3% logic, 23.7% route)
+
+--------------------------------------------------------------------------------
+Slack:                  17.631ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               reset_cond/M_stage_q_3 (FF)
+  Destination:          myBlinker/M_counter_q_27 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      2.328ns (Levels of Logic = 0)
+  Clock Path Skew:      -0.006ns (0.332 - 0.338)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: reset_cond/M_stage_q_3 to myBlinker/M_counter_q_27
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X5Y7.AMUX      Tshcko                0.518   reset_cond/M_stage_q[2]
+                                                       reset_cond/M_stage_q_3
+    SLICE_X4Y13.SR       net (fanout=7)        1.340   M_reset_cond_out
+    SLICE_X4Y13.CLK      Tsrck                 0.470   M_counter_q_27
+                                                       myBlinker/M_counter_q_27
+    -------------------------------------------------  ---------------------------
+    Total                                      2.328ns (0.988ns logic, 1.340ns route)
+                                                       (42.4% logic, 57.6% route)
+
+--------------------------------------------------------------------------------
+Slack:                  17.639ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               myBlinker/M_counter_q_0 (FF)
+  Destination:          myBlinker/M_counter_q_25 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      2.320ns (Levels of Logic = 7)
+  Clock Path Skew:      -0.006ns (0.332 - 0.338)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: myBlinker/M_counter_q_0 to myBlinker/M_counter_q_25
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X4Y7.AQ        Tcko                  0.525   myBlinker/M_counter_q[3]
+                                                       myBlinker/M_counter_q_0
+    SLICE_X4Y7.A5        net (fanout=1)        0.456   myBlinker/M_counter_q[0]
+    SLICE_X4Y7.COUT      Topcya                0.474   myBlinker/M_counter_q[3]
+                                                       myBlinker/Mcount_M_counter_q_lut<0>_INV_0
+                                                       myBlinker/Mcount_M_counter_q_cy<3>
+    SLICE_X4Y8.CIN       net (fanout=1)        0.082   myBlinker/Mcount_M_counter_q_cy[3]
+    SLICE_X4Y8.COUT      Tbyp                  0.093   myBlinker/M_counter_q[7]
+                                                       myBlinker/Mcount_M_counter_q_cy<7>
+    SLICE_X4Y9.CIN       net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[7]
+    SLICE_X4Y9.COUT      Tbyp                  0.093   myBlinker/M_counter_q[11]
+                                                       myBlinker/Mcount_M_counter_q_cy<11>
+    SLICE_X4Y10.CIN      net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[11]
+    SLICE_X4Y10.COUT     Tbyp                  0.093   myBlinker/M_counter_q[15]
+                                                       myBlinker/Mcount_M_counter_q_cy<15>
+    SLICE_X4Y11.CIN      net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[15]
+    SLICE_X4Y11.COUT     Tbyp                  0.093   myBlinker/M_counter_q[19]
+                                                       myBlinker/Mcount_M_counter_q_cy<19>
+    SLICE_X4Y12.CIN      net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[19]
+    SLICE_X4Y12.COUT     Tbyp                  0.093   myBlinker/M_counter_q[23]
+                                                       myBlinker/Mcount_M_counter_q_cy<23>
+    SLICE_X4Y13.CIN      net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[23]
+    SLICE_X4Y13.CLK      Tcinck                0.303   M_counter_q_27
+                                                       myBlinker/Mcount_M_counter_q_xor<27>
+                                                       myBlinker/M_counter_q_25
+    -------------------------------------------------  ---------------------------
+    Total                                      2.320ns (1.767ns logic, 0.553ns route)
+                                                       (76.2% logic, 23.8% route)
+
+--------------------------------------------------------------------------------
+Slack:                  17.640ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               reset_cond/M_stage_q_3 (FF)
+  Destination:          myBlinker/M_counter_q_26 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      2.319ns (Levels of Logic = 0)
+  Clock Path Skew:      -0.006ns (0.332 - 0.338)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: reset_cond/M_stage_q_3 to myBlinker/M_counter_q_26
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X5Y7.AMUX      Tshcko                0.518   reset_cond/M_stage_q[2]
+                                                       reset_cond/M_stage_q_3
+    SLICE_X4Y13.SR       net (fanout=7)        1.340   M_reset_cond_out
+    SLICE_X4Y13.CLK      Tsrck                 0.461   M_counter_q_27
+                                                       myBlinker/M_counter_q_26
+    -------------------------------------------------  ---------------------------
+    Total                                      2.319ns (0.979ns logic, 1.340ns route)
+                                                       (42.2% logic, 57.8% route)
+
+--------------------------------------------------------------------------------
+Slack:                  17.651ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               reset_cond/M_stage_q_3 (FF)
+  Destination:          myBlinker/M_counter_q_25 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      2.308ns (Levels of Logic = 0)
+  Clock Path Skew:      -0.006ns (0.332 - 0.338)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: reset_cond/M_stage_q_3 to myBlinker/M_counter_q_25
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X5Y7.AMUX      Tshcko                0.518   reset_cond/M_stage_q[2]
+                                                       reset_cond/M_stage_q_3
+    SLICE_X4Y13.SR       net (fanout=7)        1.340   M_reset_cond_out
+    SLICE_X4Y13.CLK      Tsrck                 0.450   M_counter_q_27
+                                                       myBlinker/M_counter_q_25
+    -------------------------------------------------  ---------------------------
+    Total                                      2.308ns (0.968ns logic, 1.340ns route)
+                                                       (41.9% logic, 58.1% route)
+
+--------------------------------------------------------------------------------
+Slack:                  17.670ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               myBlinker/M_counter_q_0 (FF)
+  Destination:          myBlinker/M_counter_q_26 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      2.289ns (Levels of Logic = 7)
+  Clock Path Skew:      -0.006ns (0.332 - 0.338)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: myBlinker/M_counter_q_0 to myBlinker/M_counter_q_26
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X4Y7.AQ        Tcko                  0.525   myBlinker/M_counter_q[3]
+                                                       myBlinker/M_counter_q_0
+    SLICE_X4Y7.A5        net (fanout=1)        0.456   myBlinker/M_counter_q[0]
+    SLICE_X4Y7.COUT      Topcya                0.474   myBlinker/M_counter_q[3]
+                                                       myBlinker/Mcount_M_counter_q_lut<0>_INV_0
+                                                       myBlinker/Mcount_M_counter_q_cy<3>
+    SLICE_X4Y8.CIN       net (fanout=1)        0.082   myBlinker/Mcount_M_counter_q_cy[3]
+    SLICE_X4Y8.COUT      Tbyp                  0.093   myBlinker/M_counter_q[7]
+                                                       myBlinker/Mcount_M_counter_q_cy<7>
+    SLICE_X4Y9.CIN       net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[7]
+    SLICE_X4Y9.COUT      Tbyp                  0.093   myBlinker/M_counter_q[11]
+                                                       myBlinker/Mcount_M_counter_q_cy<11>
+    SLICE_X4Y10.CIN      net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[11]
+    SLICE_X4Y10.COUT     Tbyp                  0.093   myBlinker/M_counter_q[15]
+                                                       myBlinker/Mcount_M_counter_q_cy<15>
+    SLICE_X4Y11.CIN      net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[15]
+    SLICE_X4Y11.COUT     Tbyp                  0.093   myBlinker/M_counter_q[19]
+                                                       myBlinker/Mcount_M_counter_q_cy<19>
+    SLICE_X4Y12.CIN      net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[19]
+    SLICE_X4Y12.COUT     Tbyp                  0.093   myBlinker/M_counter_q[23]
+                                                       myBlinker/Mcount_M_counter_q_cy<23>
+    SLICE_X4Y13.CIN      net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[23]
+    SLICE_X4Y13.CLK      Tcinck                0.272   M_counter_q_27
+                                                       myBlinker/Mcount_M_counter_q_xor<27>
+                                                       myBlinker/M_counter_q_26
+    -------------------------------------------------  ---------------------------
+    Total                                      2.289ns (1.736ns logic, 0.553ns route)
+                                                       (75.8% logic, 24.2% route)
+
+--------------------------------------------------------------------------------
+Slack:                  17.673ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               reset_cond/M_stage_q_3 (FF)
+  Destination:          myBlinker/M_counter_q_24 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      2.286ns (Levels of Logic = 0)
+  Clock Path Skew:      -0.006ns (0.332 - 0.338)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: reset_cond/M_stage_q_3 to myBlinker/M_counter_q_24
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X5Y7.AMUX      Tshcko                0.518   reset_cond/M_stage_q[2]
+                                                       reset_cond/M_stage_q_3
+    SLICE_X4Y13.SR       net (fanout=7)        1.340   M_reset_cond_out
+    SLICE_X4Y13.CLK      Tsrck                 0.428   M_counter_q_27
+                                                       myBlinker/M_counter_q_24
+    -------------------------------------------------  ---------------------------
+    Total                                      2.286ns (0.946ns logic, 1.340ns route)
+                                                       (41.4% logic, 58.6% route)
+
+--------------------------------------------------------------------------------
+Slack:                  17.724ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               myBlinker/M_counter_q_0 (FF)
+  Destination:          myBlinker/M_counter_q_23 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      2.234ns (Levels of Logic = 6)
+  Clock Path Skew:      -0.007ns (0.331 - 0.338)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: myBlinker/M_counter_q_0 to myBlinker/M_counter_q_23
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X4Y7.AQ        Tcko                  0.525   myBlinker/M_counter_q[3]
+                                                       myBlinker/M_counter_q_0
+    SLICE_X4Y7.A5        net (fanout=1)        0.456   myBlinker/M_counter_q[0]
+    SLICE_X4Y7.COUT      Topcya                0.474   myBlinker/M_counter_q[3]
+                                                       myBlinker/Mcount_M_counter_q_lut<0>_INV_0
+                                                       myBlinker/Mcount_M_counter_q_cy<3>
+    SLICE_X4Y8.CIN       net (fanout=1)        0.082   myBlinker/Mcount_M_counter_q_cy[3]
+    SLICE_X4Y8.COUT      Tbyp                  0.093   myBlinker/M_counter_q[7]
+                                                       myBlinker/Mcount_M_counter_q_cy<7>
+    SLICE_X4Y9.CIN       net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[7]
+    SLICE_X4Y9.COUT      Tbyp                  0.093   myBlinker/M_counter_q[11]
+                                                       myBlinker/Mcount_M_counter_q_cy<11>
+    SLICE_X4Y10.CIN      net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[11]
+    SLICE_X4Y10.COUT     Tbyp                  0.093   myBlinker/M_counter_q[15]
+                                                       myBlinker/Mcount_M_counter_q_cy<15>
+    SLICE_X4Y11.CIN      net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[15]
+    SLICE_X4Y11.COUT     Tbyp                  0.093   myBlinker/M_counter_q[19]
+                                                       myBlinker/Mcount_M_counter_q_cy<19>
+    SLICE_X4Y12.CIN      net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[19]
+    SLICE_X4Y12.CLK      Tcinck                0.313   myBlinker/M_counter_q[23]
+                                                       myBlinker/Mcount_M_counter_q_cy<23>
+                                                       myBlinker/M_counter_q_23
+    -------------------------------------------------  ---------------------------
+    Total                                      2.234ns (1.684ns logic, 0.550ns route)
+                                                       (75.4% logic, 24.6% route)
+
+--------------------------------------------------------------------------------
+Slack:                  17.729ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               myBlinker/M_counter_q_0 (FF)
+  Destination:          myBlinker/M_counter_q_24 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      2.230ns (Levels of Logic = 7)
+  Clock Path Skew:      -0.006ns (0.332 - 0.338)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: myBlinker/M_counter_q_0 to myBlinker/M_counter_q_24
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X4Y7.AQ        Tcko                  0.525   myBlinker/M_counter_q[3]
+                                                       myBlinker/M_counter_q_0
+    SLICE_X4Y7.A5        net (fanout=1)        0.456   myBlinker/M_counter_q[0]
+    SLICE_X4Y7.COUT      Topcya                0.474   myBlinker/M_counter_q[3]
+                                                       myBlinker/Mcount_M_counter_q_lut<0>_INV_0
+                                                       myBlinker/Mcount_M_counter_q_cy<3>
+    SLICE_X4Y8.CIN       net (fanout=1)        0.082   myBlinker/Mcount_M_counter_q_cy[3]
+    SLICE_X4Y8.COUT      Tbyp                  0.093   myBlinker/M_counter_q[7]
+                                                       myBlinker/Mcount_M_counter_q_cy<7>
+    SLICE_X4Y9.CIN       net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[7]
+    SLICE_X4Y9.COUT      Tbyp                  0.093   myBlinker/M_counter_q[11]
+                                                       myBlinker/Mcount_M_counter_q_cy<11>
+    SLICE_X4Y10.CIN      net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[11]
+    SLICE_X4Y10.COUT     Tbyp                  0.093   myBlinker/M_counter_q[15]
+                                                       myBlinker/Mcount_M_counter_q_cy<15>
+    SLICE_X4Y11.CIN      net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[15]
+    SLICE_X4Y11.COUT     Tbyp                  0.093   myBlinker/M_counter_q[19]
+                                                       myBlinker/Mcount_M_counter_q_cy<19>
+    SLICE_X4Y12.CIN      net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[19]
+    SLICE_X4Y12.COUT     Tbyp                  0.093   myBlinker/M_counter_q[23]
+                                                       myBlinker/Mcount_M_counter_q_cy<23>
+    SLICE_X4Y13.CIN      net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[23]
+    SLICE_X4Y13.CLK      Tcinck                0.213   M_counter_q_27
+                                                       myBlinker/Mcount_M_counter_q_xor<27>
+                                                       myBlinker/M_counter_q_24
+    -------------------------------------------------  ---------------------------
+    Total                                      2.230ns (1.677ns logic, 0.553ns route)
+                                                       (75.2% logic, 24.8% route)
+
+--------------------------------------------------------------------------------
+Slack:                  17.734ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               myBlinker/M_counter_q_0 (FF)
+  Destination:          myBlinker/M_counter_q_21 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      2.224ns (Levels of Logic = 6)
+  Clock Path Skew:      -0.007ns (0.331 - 0.338)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: myBlinker/M_counter_q_0 to myBlinker/M_counter_q_21
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X4Y7.AQ        Tcko                  0.525   myBlinker/M_counter_q[3]
+                                                       myBlinker/M_counter_q_0
+    SLICE_X4Y7.A5        net (fanout=1)        0.456   myBlinker/M_counter_q[0]
+    SLICE_X4Y7.COUT      Topcya                0.474   myBlinker/M_counter_q[3]
+                                                       myBlinker/Mcount_M_counter_q_lut<0>_INV_0
+                                                       myBlinker/Mcount_M_counter_q_cy<3>
+    SLICE_X4Y8.CIN       net (fanout=1)        0.082   myBlinker/Mcount_M_counter_q_cy[3]
+    SLICE_X4Y8.COUT      Tbyp                  0.093   myBlinker/M_counter_q[7]
+                                                       myBlinker/Mcount_M_counter_q_cy<7>
+    SLICE_X4Y9.CIN       net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[7]
+    SLICE_X4Y9.COUT      Tbyp                  0.093   myBlinker/M_counter_q[11]
+                                                       myBlinker/Mcount_M_counter_q_cy<11>
+    SLICE_X4Y10.CIN      net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[11]
+    SLICE_X4Y10.COUT     Tbyp                  0.093   myBlinker/M_counter_q[15]
+                                                       myBlinker/Mcount_M_counter_q_cy<15>
+    SLICE_X4Y11.CIN      net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[15]
+    SLICE_X4Y11.COUT     Tbyp                  0.093   myBlinker/M_counter_q[19]
+                                                       myBlinker/Mcount_M_counter_q_cy<19>
+    SLICE_X4Y12.CIN      net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[19]
+    SLICE_X4Y12.CLK      Tcinck                0.303   myBlinker/M_counter_q[23]
+                                                       myBlinker/Mcount_M_counter_q_cy<23>
+                                                       myBlinker/M_counter_q_21
+    -------------------------------------------------  ---------------------------
+    Total                                      2.224ns (1.674ns logic, 0.550ns route)
+                                                       (75.3% logic, 24.7% route)
+
+--------------------------------------------------------------------------------
+Slack:                  17.765ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               myBlinker/M_counter_q_0 (FF)
+  Destination:          myBlinker/M_counter_q_22 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      2.193ns (Levels of Logic = 6)
+  Clock Path Skew:      -0.007ns (0.331 - 0.338)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: myBlinker/M_counter_q_0 to myBlinker/M_counter_q_22
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X4Y7.AQ        Tcko                  0.525   myBlinker/M_counter_q[3]
+                                                       myBlinker/M_counter_q_0
+    SLICE_X4Y7.A5        net (fanout=1)        0.456   myBlinker/M_counter_q[0]
+    SLICE_X4Y7.COUT      Topcya                0.474   myBlinker/M_counter_q[3]
+                                                       myBlinker/Mcount_M_counter_q_lut<0>_INV_0
+                                                       myBlinker/Mcount_M_counter_q_cy<3>
+    SLICE_X4Y8.CIN       net (fanout=1)        0.082   myBlinker/Mcount_M_counter_q_cy[3]
+    SLICE_X4Y8.COUT      Tbyp                  0.093   myBlinker/M_counter_q[7]
+                                                       myBlinker/Mcount_M_counter_q_cy<7>
+    SLICE_X4Y9.CIN       net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[7]
+    SLICE_X4Y9.COUT      Tbyp                  0.093   myBlinker/M_counter_q[11]
+                                                       myBlinker/Mcount_M_counter_q_cy<11>
+    SLICE_X4Y10.CIN      net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[11]
+    SLICE_X4Y10.COUT     Tbyp                  0.093   myBlinker/M_counter_q[15]
+                                                       myBlinker/Mcount_M_counter_q_cy<15>
+    SLICE_X4Y11.CIN      net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[15]
+    SLICE_X4Y11.COUT     Tbyp                  0.093   myBlinker/M_counter_q[19]
+                                                       myBlinker/Mcount_M_counter_q_cy<19>
+    SLICE_X4Y12.CIN      net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[19]
+    SLICE_X4Y12.CLK      Tcinck                0.272   myBlinker/M_counter_q[23]
+                                                       myBlinker/Mcount_M_counter_q_cy<23>
+                                                       myBlinker/M_counter_q_22
+    -------------------------------------------------  ---------------------------
+    Total                                      2.193ns (1.643ns logic, 0.550ns route)
+                                                       (74.9% logic, 25.1% route)
+
+--------------------------------------------------------------------------------
+Slack:                  17.799ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               myBlinker/M_counter_q_3 (FF)
+  Destination:          myBlinker/M_counter_q_27 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      2.160ns (Levels of Logic = 7)
+  Clock Path Skew:      -0.006ns (0.332 - 0.338)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: myBlinker/M_counter_q_3 to myBlinker/M_counter_q_27
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X4Y7.DQ        Tcko                  0.525   myBlinker/M_counter_q[3]
+                                                       myBlinker/M_counter_q_3
+    SLICE_X4Y7.D5        net (fanout=1)        0.448   myBlinker/M_counter_q[3]
+    SLICE_X4Y7.COUT      Topcyd                0.312   myBlinker/M_counter_q[3]
+                                                       myBlinker/M_counter_q[3]_rt
+                                                       myBlinker/Mcount_M_counter_q_cy<3>
+    SLICE_X4Y8.CIN       net (fanout=1)        0.082   myBlinker/Mcount_M_counter_q_cy[3]
+    SLICE_X4Y8.COUT      Tbyp                  0.093   myBlinker/M_counter_q[7]
+                                                       myBlinker/Mcount_M_counter_q_cy<7>
+    SLICE_X4Y9.CIN       net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[7]
+    SLICE_X4Y9.COUT      Tbyp                  0.093   myBlinker/M_counter_q[11]
+                                                       myBlinker/Mcount_M_counter_q_cy<11>
+    SLICE_X4Y10.CIN      net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[11]
+    SLICE_X4Y10.COUT     Tbyp                  0.093   myBlinker/M_counter_q[15]
+                                                       myBlinker/Mcount_M_counter_q_cy<15>
+    SLICE_X4Y11.CIN      net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[15]
+    SLICE_X4Y11.COUT     Tbyp                  0.093   myBlinker/M_counter_q[19]
+                                                       myBlinker/Mcount_M_counter_q_cy<19>
+    SLICE_X4Y12.CIN      net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[19]
+    SLICE_X4Y12.COUT     Tbyp                  0.093   myBlinker/M_counter_q[23]
+                                                       myBlinker/Mcount_M_counter_q_cy<23>
+    SLICE_X4Y13.CIN      net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[23]
+    SLICE_X4Y13.CLK      Tcinck                0.313   M_counter_q_27
+                                                       myBlinker/Mcount_M_counter_q_xor<27>
+                                                       myBlinker/M_counter_q_27
+    -------------------------------------------------  ---------------------------
+    Total                                      2.160ns (1.615ns logic, 0.545ns route)
+                                                       (74.8% logic, 25.2% route)
+
+--------------------------------------------------------------------------------
+Slack:                  17.809ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               myBlinker/M_counter_q_3 (FF)
+  Destination:          myBlinker/M_counter_q_25 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      2.150ns (Levels of Logic = 7)
+  Clock Path Skew:      -0.006ns (0.332 - 0.338)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: myBlinker/M_counter_q_3 to myBlinker/M_counter_q_25
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X4Y7.DQ        Tcko                  0.525   myBlinker/M_counter_q[3]
+                                                       myBlinker/M_counter_q_3
+    SLICE_X4Y7.D5        net (fanout=1)        0.448   myBlinker/M_counter_q[3]
+    SLICE_X4Y7.COUT      Topcyd                0.312   myBlinker/M_counter_q[3]
+                                                       myBlinker/M_counter_q[3]_rt
+                                                       myBlinker/Mcount_M_counter_q_cy<3>
+    SLICE_X4Y8.CIN       net (fanout=1)        0.082   myBlinker/Mcount_M_counter_q_cy[3]
+    SLICE_X4Y8.COUT      Tbyp                  0.093   myBlinker/M_counter_q[7]
+                                                       myBlinker/Mcount_M_counter_q_cy<7>
+    SLICE_X4Y9.CIN       net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[7]
+    SLICE_X4Y9.COUT      Tbyp                  0.093   myBlinker/M_counter_q[11]
+                                                       myBlinker/Mcount_M_counter_q_cy<11>
+    SLICE_X4Y10.CIN      net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[11]
+    SLICE_X4Y10.COUT     Tbyp                  0.093   myBlinker/M_counter_q[15]
+                                                       myBlinker/Mcount_M_counter_q_cy<15>
+    SLICE_X4Y11.CIN      net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[15]
+    SLICE_X4Y11.COUT     Tbyp                  0.093   myBlinker/M_counter_q[19]
+                                                       myBlinker/Mcount_M_counter_q_cy<19>
+    SLICE_X4Y12.CIN      net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[19]
+    SLICE_X4Y12.COUT     Tbyp                  0.093   myBlinker/M_counter_q[23]
+                                                       myBlinker/Mcount_M_counter_q_cy<23>
+    SLICE_X4Y13.CIN      net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[23]
+    SLICE_X4Y13.CLK      Tcinck                0.303   M_counter_q_27
+                                                       myBlinker/Mcount_M_counter_q_xor<27>
+                                                       myBlinker/M_counter_q_25
+    -------------------------------------------------  ---------------------------
+    Total                                      2.150ns (1.605ns logic, 0.545ns route)
+                                                       (74.7% logic, 25.3% route)
+
+--------------------------------------------------------------------------------
+Slack:                  17.810ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               myBlinker/M_counter_q_4 (FF)
+  Destination:          myBlinker/M_counter_q_27 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      2.155ns (Levels of Logic = 6)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: myBlinker/M_counter_q_4 to myBlinker/M_counter_q_27
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X4Y8.AQ        Tcko                  0.525   myBlinker/M_counter_q[7]
+                                                       myBlinker/M_counter_q_4
+    SLICE_X4Y8.A5        net (fanout=1)        0.456   myBlinker/M_counter_q[4]
+    SLICE_X4Y8.COUT      Topcya                0.474   myBlinker/M_counter_q[7]
+                                                       myBlinker/M_counter_q[4]_rt
+                                                       myBlinker/Mcount_M_counter_q_cy<7>
+    SLICE_X4Y9.CIN       net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[7]
+    SLICE_X4Y9.COUT      Tbyp                  0.093   myBlinker/M_counter_q[11]
+                                                       myBlinker/Mcount_M_counter_q_cy<11>
+    SLICE_X4Y10.CIN      net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[11]
+    SLICE_X4Y10.COUT     Tbyp                  0.093   myBlinker/M_counter_q[15]
+                                                       myBlinker/Mcount_M_counter_q_cy<15>
+    SLICE_X4Y11.CIN      net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[15]
+    SLICE_X4Y11.COUT     Tbyp                  0.093   myBlinker/M_counter_q[19]
+                                                       myBlinker/Mcount_M_counter_q_cy<19>
+    SLICE_X4Y12.CIN      net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[19]
+    SLICE_X4Y12.COUT     Tbyp                  0.093   myBlinker/M_counter_q[23]
+                                                       myBlinker/Mcount_M_counter_q_cy<23>
+    SLICE_X4Y13.CIN      net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[23]
+    SLICE_X4Y13.CLK      Tcinck                0.313   M_counter_q_27
+                                                       myBlinker/Mcount_M_counter_q_xor<27>
+                                                       myBlinker/M_counter_q_27
+    -------------------------------------------------  ---------------------------
+    Total                                      2.155ns (1.684ns logic, 0.471ns route)
+                                                       (78.1% logic, 21.9% route)
+
+--------------------------------------------------------------------------------
+Slack:                  17.817ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               reset_cond/M_stage_q_3 (FF)
+  Destination:          myBlinker/M_counter_q_23 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      2.141ns (Levels of Logic = 0)
+  Clock Path Skew:      -0.007ns (0.331 - 0.338)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: reset_cond/M_stage_q_3 to myBlinker/M_counter_q_23
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X5Y7.AMUX      Tshcko                0.518   reset_cond/M_stage_q[2]
+                                                       reset_cond/M_stage_q_3
+    SLICE_X4Y12.SR       net (fanout=7)        1.153   M_reset_cond_out
+    SLICE_X4Y12.CLK      Tsrck                 0.470   myBlinker/M_counter_q[23]
+                                                       myBlinker/M_counter_q_23
+    -------------------------------------------------  ---------------------------
+    Total                                      2.141ns (0.988ns logic, 1.153ns route)
+                                                       (46.1% logic, 53.9% route)
+
+--------------------------------------------------------------------------------
+Slack:                  17.818ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               myBlinker/M_counter_q_0 (FF)
+  Destination:          myBlinker/M_counter_q_19 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      2.138ns (Levels of Logic = 5)
+  Clock Path Skew:      -0.009ns (0.329 - 0.338)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: myBlinker/M_counter_q_0 to myBlinker/M_counter_q_19
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X4Y7.AQ        Tcko                  0.525   myBlinker/M_counter_q[3]
+                                                       myBlinker/M_counter_q_0
+    SLICE_X4Y7.A5        net (fanout=1)        0.456   myBlinker/M_counter_q[0]
+    SLICE_X4Y7.COUT      Topcya                0.474   myBlinker/M_counter_q[3]
+                                                       myBlinker/Mcount_M_counter_q_lut<0>_INV_0
+                                                       myBlinker/Mcount_M_counter_q_cy<3>
+    SLICE_X4Y8.CIN       net (fanout=1)        0.082   myBlinker/Mcount_M_counter_q_cy[3]
+    SLICE_X4Y8.COUT      Tbyp                  0.093   myBlinker/M_counter_q[7]
+                                                       myBlinker/Mcount_M_counter_q_cy<7>
+    SLICE_X4Y9.CIN       net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[7]
+    SLICE_X4Y9.COUT      Tbyp                  0.093   myBlinker/M_counter_q[11]
+                                                       myBlinker/Mcount_M_counter_q_cy<11>
+    SLICE_X4Y10.CIN      net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[11]
+    SLICE_X4Y10.COUT     Tbyp                  0.093   myBlinker/M_counter_q[15]
+                                                       myBlinker/Mcount_M_counter_q_cy<15>
+    SLICE_X4Y11.CIN      net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[15]
+    SLICE_X4Y11.CLK      Tcinck                0.313   myBlinker/M_counter_q[19]
+                                                       myBlinker/Mcount_M_counter_q_cy<19>
+                                                       myBlinker/M_counter_q_19
+    -------------------------------------------------  ---------------------------
+    Total                                      2.138ns (1.591ns logic, 0.547ns route)
+                                                       (74.4% logic, 25.6% route)
+
+--------------------------------------------------------------------------------
+Slack:                  17.820ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               myBlinker/M_counter_q_4 (FF)
+  Destination:          myBlinker/M_counter_q_25 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      2.145ns (Levels of Logic = 6)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: myBlinker/M_counter_q_4 to myBlinker/M_counter_q_25
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X4Y8.AQ        Tcko                  0.525   myBlinker/M_counter_q[7]
+                                                       myBlinker/M_counter_q_4
+    SLICE_X4Y8.A5        net (fanout=1)        0.456   myBlinker/M_counter_q[4]
+    SLICE_X4Y8.COUT      Topcya                0.474   myBlinker/M_counter_q[7]
+                                                       myBlinker/M_counter_q[4]_rt
+                                                       myBlinker/Mcount_M_counter_q_cy<7>
+    SLICE_X4Y9.CIN       net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[7]
+    SLICE_X4Y9.COUT      Tbyp                  0.093   myBlinker/M_counter_q[11]
+                                                       myBlinker/Mcount_M_counter_q_cy<11>
+    SLICE_X4Y10.CIN      net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[11]
+    SLICE_X4Y10.COUT     Tbyp                  0.093   myBlinker/M_counter_q[15]
+                                                       myBlinker/Mcount_M_counter_q_cy<15>
+    SLICE_X4Y11.CIN      net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[15]
+    SLICE_X4Y11.COUT     Tbyp                  0.093   myBlinker/M_counter_q[19]
+                                                       myBlinker/Mcount_M_counter_q_cy<19>
+    SLICE_X4Y12.CIN      net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[19]
+    SLICE_X4Y12.COUT     Tbyp                  0.093   myBlinker/M_counter_q[23]
+                                                       myBlinker/Mcount_M_counter_q_cy<23>
+    SLICE_X4Y13.CIN      net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[23]
+    SLICE_X4Y13.CLK      Tcinck                0.303   M_counter_q_27
+                                                       myBlinker/Mcount_M_counter_q_xor<27>
+                                                       myBlinker/M_counter_q_25
+    -------------------------------------------------  ---------------------------
+    Total                                      2.145ns (1.674ns logic, 0.471ns route)
+                                                       (78.0% logic, 22.0% route)
+
+--------------------------------------------------------------------------------
+Slack:                  17.824ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               myBlinker/M_counter_q_0 (FF)
+  Destination:          myBlinker/M_counter_q_20 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      2.134ns (Levels of Logic = 6)
+  Clock Path Skew:      -0.007ns (0.331 - 0.338)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: myBlinker/M_counter_q_0 to myBlinker/M_counter_q_20
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X4Y7.AQ        Tcko                  0.525   myBlinker/M_counter_q[3]
+                                                       myBlinker/M_counter_q_0
+    SLICE_X4Y7.A5        net (fanout=1)        0.456   myBlinker/M_counter_q[0]
+    SLICE_X4Y7.COUT      Topcya                0.474   myBlinker/M_counter_q[3]
+                                                       myBlinker/Mcount_M_counter_q_lut<0>_INV_0
+                                                       myBlinker/Mcount_M_counter_q_cy<3>
+    SLICE_X4Y8.CIN       net (fanout=1)        0.082   myBlinker/Mcount_M_counter_q_cy[3]
+    SLICE_X4Y8.COUT      Tbyp                  0.093   myBlinker/M_counter_q[7]
+                                                       myBlinker/Mcount_M_counter_q_cy<7>
+    SLICE_X4Y9.CIN       net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[7]
+    SLICE_X4Y9.COUT      Tbyp                  0.093   myBlinker/M_counter_q[11]
+                                                       myBlinker/Mcount_M_counter_q_cy<11>
+    SLICE_X4Y10.CIN      net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[11]
+    SLICE_X4Y10.COUT     Tbyp                  0.093   myBlinker/M_counter_q[15]
+                                                       myBlinker/Mcount_M_counter_q_cy<15>
+    SLICE_X4Y11.CIN      net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[15]
+    SLICE_X4Y11.COUT     Tbyp                  0.093   myBlinker/M_counter_q[19]
+                                                       myBlinker/Mcount_M_counter_q_cy<19>
+    SLICE_X4Y12.CIN      net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[19]
+    SLICE_X4Y12.CLK      Tcinck                0.213   myBlinker/M_counter_q[23]
+                                                       myBlinker/Mcount_M_counter_q_cy<23>
+                                                       myBlinker/M_counter_q_20
+    -------------------------------------------------  ---------------------------
+    Total                                      2.134ns (1.584ns logic, 0.550ns route)
+                                                       (74.2% logic, 25.8% route)
+
+--------------------------------------------------------------------------------
+Slack:                  17.826ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               reset_cond/M_stage_q_3 (FF)
+  Destination:          myBlinker/M_counter_q_22 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      2.132ns (Levels of Logic = 0)
+  Clock Path Skew:      -0.007ns (0.331 - 0.338)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: reset_cond/M_stage_q_3 to myBlinker/M_counter_q_22
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X5Y7.AMUX      Tshcko                0.518   reset_cond/M_stage_q[2]
+                                                       reset_cond/M_stage_q_3
+    SLICE_X4Y12.SR       net (fanout=7)        1.153   M_reset_cond_out
+    SLICE_X4Y12.CLK      Tsrck                 0.461   myBlinker/M_counter_q[23]
+                                                       myBlinker/M_counter_q_22
+    -------------------------------------------------  ---------------------------
+    Total                                      2.132ns (0.979ns logic, 1.153ns route)
+                                                       (45.9% logic, 54.1% route)
+
+--------------------------------------------------------------------------------
+Slack:                  17.828ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               myBlinker/M_counter_q_0 (FF)
+  Destination:          myBlinker/M_counter_q_17 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      2.128ns (Levels of Logic = 5)
+  Clock Path Skew:      -0.009ns (0.329 - 0.338)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: myBlinker/M_counter_q_0 to myBlinker/M_counter_q_17
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X4Y7.AQ        Tcko                  0.525   myBlinker/M_counter_q[3]
+                                                       myBlinker/M_counter_q_0
+    SLICE_X4Y7.A5        net (fanout=1)        0.456   myBlinker/M_counter_q[0]
+    SLICE_X4Y7.COUT      Topcya                0.474   myBlinker/M_counter_q[3]
+                                                       myBlinker/Mcount_M_counter_q_lut<0>_INV_0
+                                                       myBlinker/Mcount_M_counter_q_cy<3>
+    SLICE_X4Y8.CIN       net (fanout=1)        0.082   myBlinker/Mcount_M_counter_q_cy[3]
+    SLICE_X4Y8.COUT      Tbyp                  0.093   myBlinker/M_counter_q[7]
+                                                       myBlinker/Mcount_M_counter_q_cy<7>
+    SLICE_X4Y9.CIN       net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[7]
+    SLICE_X4Y9.COUT      Tbyp                  0.093   myBlinker/M_counter_q[11]
+                                                       myBlinker/Mcount_M_counter_q_cy<11>
+    SLICE_X4Y10.CIN      net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[11]
+    SLICE_X4Y10.COUT     Tbyp                  0.093   myBlinker/M_counter_q[15]
+                                                       myBlinker/Mcount_M_counter_q_cy<15>
+    SLICE_X4Y11.CIN      net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[15]
+    SLICE_X4Y11.CLK      Tcinck                0.303   myBlinker/M_counter_q[19]
+                                                       myBlinker/Mcount_M_counter_q_cy<19>
+                                                       myBlinker/M_counter_q_17
+    -------------------------------------------------  ---------------------------
+    Total                                      2.128ns (1.581ns logic, 0.547ns route)
+                                                       (74.3% logic, 25.7% route)
+
+--------------------------------------------------------------------------------
+Slack:                  17.837ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               reset_cond/M_stage_q_3 (FF)
+  Destination:          myBlinker/M_counter_q_21 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      2.121ns (Levels of Logic = 0)
+  Clock Path Skew:      -0.007ns (0.331 - 0.338)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: reset_cond/M_stage_q_3 to myBlinker/M_counter_q_21
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X5Y7.AMUX      Tshcko                0.518   reset_cond/M_stage_q[2]
+                                                       reset_cond/M_stage_q_3
+    SLICE_X4Y12.SR       net (fanout=7)        1.153   M_reset_cond_out
+    SLICE_X4Y12.CLK      Tsrck                 0.450   myBlinker/M_counter_q[23]
+                                                       myBlinker/M_counter_q_21
+    -------------------------------------------------  ---------------------------
+    Total                                      2.121ns (0.968ns logic, 1.153ns route)
+                                                       (45.6% logic, 54.4% route)
+
+--------------------------------------------------------------------------------
+Slack:                  17.840ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               myBlinker/M_counter_q_3 (FF)
+  Destination:          myBlinker/M_counter_q_26 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      2.119ns (Levels of Logic = 7)
+  Clock Path Skew:      -0.006ns (0.332 - 0.338)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: myBlinker/M_counter_q_3 to myBlinker/M_counter_q_26
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X4Y7.DQ        Tcko                  0.525   myBlinker/M_counter_q[3]
+                                                       myBlinker/M_counter_q_3
+    SLICE_X4Y7.D5        net (fanout=1)        0.448   myBlinker/M_counter_q[3]
+    SLICE_X4Y7.COUT      Topcyd                0.312   myBlinker/M_counter_q[3]
+                                                       myBlinker/M_counter_q[3]_rt
+                                                       myBlinker/Mcount_M_counter_q_cy<3>
+    SLICE_X4Y8.CIN       net (fanout=1)        0.082   myBlinker/Mcount_M_counter_q_cy[3]
+    SLICE_X4Y8.COUT      Tbyp                  0.093   myBlinker/M_counter_q[7]
+                                                       myBlinker/Mcount_M_counter_q_cy<7>
+    SLICE_X4Y9.CIN       net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[7]
+    SLICE_X4Y9.COUT      Tbyp                  0.093   myBlinker/M_counter_q[11]
+                                                       myBlinker/Mcount_M_counter_q_cy<11>
+    SLICE_X4Y10.CIN      net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[11]
+    SLICE_X4Y10.COUT     Tbyp                  0.093   myBlinker/M_counter_q[15]
+                                                       myBlinker/Mcount_M_counter_q_cy<15>
+    SLICE_X4Y11.CIN      net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[15]
+    SLICE_X4Y11.COUT     Tbyp                  0.093   myBlinker/M_counter_q[19]
+                                                       myBlinker/Mcount_M_counter_q_cy<19>
+    SLICE_X4Y12.CIN      net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[19]
+    SLICE_X4Y12.COUT     Tbyp                  0.093   myBlinker/M_counter_q[23]
+                                                       myBlinker/Mcount_M_counter_q_cy<23>
+    SLICE_X4Y13.CIN      net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[23]
+    SLICE_X4Y13.CLK      Tcinck                0.272   M_counter_q_27
+                                                       myBlinker/Mcount_M_counter_q_xor<27>
+                                                       myBlinker/M_counter_q_26
+    -------------------------------------------------  ---------------------------
+    Total                                      2.119ns (1.574ns logic, 0.545ns route)
+                                                       (74.3% logic, 25.7% route)
+
+--------------------------------------------------------------------------------
+Slack:                  17.851ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               myBlinker/M_counter_q_4 (FF)
+  Destination:          myBlinker/M_counter_q_26 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      2.114ns (Levels of Logic = 6)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: myBlinker/M_counter_q_4 to myBlinker/M_counter_q_26
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X4Y8.AQ        Tcko                  0.525   myBlinker/M_counter_q[7]
+                                                       myBlinker/M_counter_q_4
+    SLICE_X4Y8.A5        net (fanout=1)        0.456   myBlinker/M_counter_q[4]
+    SLICE_X4Y8.COUT      Topcya                0.474   myBlinker/M_counter_q[7]
+                                                       myBlinker/M_counter_q[4]_rt
+                                                       myBlinker/Mcount_M_counter_q_cy<7>
+    SLICE_X4Y9.CIN       net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[7]
+    SLICE_X4Y9.COUT      Tbyp                  0.093   myBlinker/M_counter_q[11]
+                                                       myBlinker/Mcount_M_counter_q_cy<11>
+    SLICE_X4Y10.CIN      net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[11]
+    SLICE_X4Y10.COUT     Tbyp                  0.093   myBlinker/M_counter_q[15]
+                                                       myBlinker/Mcount_M_counter_q_cy<15>
+    SLICE_X4Y11.CIN      net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[15]
+    SLICE_X4Y11.COUT     Tbyp                  0.093   myBlinker/M_counter_q[19]
+                                                       myBlinker/Mcount_M_counter_q_cy<19>
+    SLICE_X4Y12.CIN      net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[19]
+    SLICE_X4Y12.COUT     Tbyp                  0.093   myBlinker/M_counter_q[23]
+                                                       myBlinker/Mcount_M_counter_q_cy<23>
+    SLICE_X4Y13.CIN      net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[23]
+    SLICE_X4Y13.CLK      Tcinck                0.272   M_counter_q_27
+                                                       myBlinker/Mcount_M_counter_q_xor<27>
+                                                       myBlinker/M_counter_q_26
+    -------------------------------------------------  ---------------------------
+    Total                                      2.114ns (1.643ns logic, 0.471ns route)
+                                                       (77.7% logic, 22.3% route)
+
+--------------------------------------------------------------------------------
+Slack:                  17.859ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               reset_cond/M_stage_q_3 (FF)
+  Destination:          myBlinker/M_counter_q_20 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      2.099ns (Levels of Logic = 0)
+  Clock Path Skew:      -0.007ns (0.331 - 0.338)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: reset_cond/M_stage_q_3 to myBlinker/M_counter_q_20
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X5Y7.AMUX      Tshcko                0.518   reset_cond/M_stage_q[2]
+                                                       reset_cond/M_stage_q_3
+    SLICE_X4Y12.SR       net (fanout=7)        1.153   M_reset_cond_out
+    SLICE_X4Y12.CLK      Tsrck                 0.428   myBlinker/M_counter_q[23]
+                                                       myBlinker/M_counter_q_20
+    -------------------------------------------------  ---------------------------
+    Total                                      2.099ns (0.946ns logic, 1.153ns route)
+                                                       (45.1% logic, 54.9% route)
+
+--------------------------------------------------------------------------------
+Slack:                  17.859ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               myBlinker/M_counter_q_0 (FF)
+  Destination:          myBlinker/M_counter_q_18 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      2.097ns (Levels of Logic = 5)
+  Clock Path Skew:      -0.009ns (0.329 - 0.338)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: myBlinker/M_counter_q_0 to myBlinker/M_counter_q_18
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X4Y7.AQ        Tcko                  0.525   myBlinker/M_counter_q[3]
+                                                       myBlinker/M_counter_q_0
+    SLICE_X4Y7.A5        net (fanout=1)        0.456   myBlinker/M_counter_q[0]
+    SLICE_X4Y7.COUT      Topcya                0.474   myBlinker/M_counter_q[3]
+                                                       myBlinker/Mcount_M_counter_q_lut<0>_INV_0
+                                                       myBlinker/Mcount_M_counter_q_cy<3>
+    SLICE_X4Y8.CIN       net (fanout=1)        0.082   myBlinker/Mcount_M_counter_q_cy[3]
+    SLICE_X4Y8.COUT      Tbyp                  0.093   myBlinker/M_counter_q[7]
+                                                       myBlinker/Mcount_M_counter_q_cy<7>
+    SLICE_X4Y9.CIN       net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[7]
+    SLICE_X4Y9.COUT      Tbyp                  0.093   myBlinker/M_counter_q[11]
+                                                       myBlinker/Mcount_M_counter_q_cy<11>
+    SLICE_X4Y10.CIN      net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[11]
+    SLICE_X4Y10.COUT     Tbyp                  0.093   myBlinker/M_counter_q[15]
+                                                       myBlinker/Mcount_M_counter_q_cy<15>
+    SLICE_X4Y11.CIN      net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[15]
+    SLICE_X4Y11.CLK      Tcinck                0.272   myBlinker/M_counter_q[19]
+                                                       myBlinker/Mcount_M_counter_q_cy<19>
+                                                       myBlinker/M_counter_q_18
+    -------------------------------------------------  ---------------------------
+    Total                                      2.097ns (1.550ns logic, 0.547ns route)
+                                                       (73.9% logic, 26.1% route)
+
+--------------------------------------------------------------------------------
+Slack:                  17.861ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               myBlinker/M_counter_q_1 (FF)
+  Destination:          myBlinker/M_counter_q_27 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      2.098ns (Levels of Logic = 7)
+  Clock Path Skew:      -0.006ns (0.332 - 0.338)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: myBlinker/M_counter_q_1 to myBlinker/M_counter_q_27
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X4Y7.BQ        Tcko                  0.525   myBlinker/M_counter_q[3]
+                                                       myBlinker/M_counter_q_1
+    SLICE_X4Y7.B5        net (fanout=1)        0.215   myBlinker/M_counter_q[1]
+    SLICE_X4Y7.COUT      Topcyb                0.483   myBlinker/M_counter_q[3]
+                                                       myBlinker/M_counter_q[1]_rt
+                                                       myBlinker/Mcount_M_counter_q_cy<3>
+    SLICE_X4Y8.CIN       net (fanout=1)        0.082   myBlinker/Mcount_M_counter_q_cy[3]
+    SLICE_X4Y8.COUT      Tbyp                  0.093   myBlinker/M_counter_q[7]
+                                                       myBlinker/Mcount_M_counter_q_cy<7>
+    SLICE_X4Y9.CIN       net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[7]
+    SLICE_X4Y9.COUT      Tbyp                  0.093   myBlinker/M_counter_q[11]
+                                                       myBlinker/Mcount_M_counter_q_cy<11>
+    SLICE_X4Y10.CIN      net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[11]
+    SLICE_X4Y10.COUT     Tbyp                  0.093   myBlinker/M_counter_q[15]
+                                                       myBlinker/Mcount_M_counter_q_cy<15>
+    SLICE_X4Y11.CIN      net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[15]
+    SLICE_X4Y11.COUT     Tbyp                  0.093   myBlinker/M_counter_q[19]
+                                                       myBlinker/Mcount_M_counter_q_cy<19>
+    SLICE_X4Y12.CIN      net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[19]
+    SLICE_X4Y12.COUT     Tbyp                  0.093   myBlinker/M_counter_q[23]
+                                                       myBlinker/Mcount_M_counter_q_cy<23>
+    SLICE_X4Y13.CIN      net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[23]
+    SLICE_X4Y13.CLK      Tcinck                0.313   M_counter_q_27
+                                                       myBlinker/Mcount_M_counter_q_xor<27>
+                                                       myBlinker/M_counter_q_27
+    -------------------------------------------------  ---------------------------
+    Total                                      2.098ns (1.786ns logic, 0.312ns route)
+                                                       (85.1% logic, 14.9% route)
+
+--------------------------------------------------------------------------------
+Slack:                  17.871ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               myBlinker/M_counter_q_1 (FF)
+  Destination:          myBlinker/M_counter_q_25 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      2.088ns (Levels of Logic = 7)
+  Clock Path Skew:      -0.006ns (0.332 - 0.338)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: myBlinker/M_counter_q_1 to myBlinker/M_counter_q_25
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X4Y7.BQ        Tcko                  0.525   myBlinker/M_counter_q[3]
+                                                       myBlinker/M_counter_q_1
+    SLICE_X4Y7.B5        net (fanout=1)        0.215   myBlinker/M_counter_q[1]
+    SLICE_X4Y7.COUT      Topcyb                0.483   myBlinker/M_counter_q[3]
+                                                       myBlinker/M_counter_q[1]_rt
+                                                       myBlinker/Mcount_M_counter_q_cy<3>
+    SLICE_X4Y8.CIN       net (fanout=1)        0.082   myBlinker/Mcount_M_counter_q_cy[3]
+    SLICE_X4Y8.COUT      Tbyp                  0.093   myBlinker/M_counter_q[7]
+                                                       myBlinker/Mcount_M_counter_q_cy<7>
+    SLICE_X4Y9.CIN       net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[7]
+    SLICE_X4Y9.COUT      Tbyp                  0.093   myBlinker/M_counter_q[11]
+                                                       myBlinker/Mcount_M_counter_q_cy<11>
+    SLICE_X4Y10.CIN      net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[11]
+    SLICE_X4Y10.COUT     Tbyp                  0.093   myBlinker/M_counter_q[15]
+                                                       myBlinker/Mcount_M_counter_q_cy<15>
+    SLICE_X4Y11.CIN      net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[15]
+    SLICE_X4Y11.COUT     Tbyp                  0.093   myBlinker/M_counter_q[19]
+                                                       myBlinker/Mcount_M_counter_q_cy<19>
+    SLICE_X4Y12.CIN      net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[19]
+    SLICE_X4Y12.COUT     Tbyp                  0.093   myBlinker/M_counter_q[23]
+                                                       myBlinker/Mcount_M_counter_q_cy<23>
+    SLICE_X4Y13.CIN      net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[23]
+    SLICE_X4Y13.CLK      Tcinck                0.303   M_counter_q_27
+                                                       myBlinker/Mcount_M_counter_q_xor<27>
+                                                       myBlinker/M_counter_q_25
+    -------------------------------------------------  ---------------------------
+    Total                                      2.088ns (1.776ns logic, 0.312ns route)
+                                                       (85.1% logic, 14.9% route)
+
+--------------------------------------------------------------------------------
+Slack:                  17.894ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               myBlinker/M_counter_q_3 (FF)
+  Destination:          myBlinker/M_counter_q_23 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      2.064ns (Levels of Logic = 6)
+  Clock Path Skew:      -0.007ns (0.331 - 0.338)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: myBlinker/M_counter_q_3 to myBlinker/M_counter_q_23
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X4Y7.DQ        Tcko                  0.525   myBlinker/M_counter_q[3]
+                                                       myBlinker/M_counter_q_3
+    SLICE_X4Y7.D5        net (fanout=1)        0.448   myBlinker/M_counter_q[3]
+    SLICE_X4Y7.COUT      Topcyd                0.312   myBlinker/M_counter_q[3]
+                                                       myBlinker/M_counter_q[3]_rt
+                                                       myBlinker/Mcount_M_counter_q_cy<3>
+    SLICE_X4Y8.CIN       net (fanout=1)        0.082   myBlinker/Mcount_M_counter_q_cy[3]
+    SLICE_X4Y8.COUT      Tbyp                  0.093   myBlinker/M_counter_q[7]
+                                                       myBlinker/Mcount_M_counter_q_cy<7>
+    SLICE_X4Y9.CIN       net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[7]
+    SLICE_X4Y9.COUT      Tbyp                  0.093   myBlinker/M_counter_q[11]
+                                                       myBlinker/Mcount_M_counter_q_cy<11>
+    SLICE_X4Y10.CIN      net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[11]
+    SLICE_X4Y10.COUT     Tbyp                  0.093   myBlinker/M_counter_q[15]
+                                                       myBlinker/Mcount_M_counter_q_cy<15>
+    SLICE_X4Y11.CIN      net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[15]
+    SLICE_X4Y11.COUT     Tbyp                  0.093   myBlinker/M_counter_q[19]
+                                                       myBlinker/Mcount_M_counter_q_cy<19>
+    SLICE_X4Y12.CIN      net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[19]
+    SLICE_X4Y12.CLK      Tcinck                0.313   myBlinker/M_counter_q[23]
+                                                       myBlinker/Mcount_M_counter_q_cy<23>
+                                                       myBlinker/M_counter_q_23
+    -------------------------------------------------  ---------------------------
+    Total                                      2.064ns (1.522ns logic, 0.542ns route)
+                                                       (73.7% logic, 26.3% route)
+
+--------------------------------------------------------------------------------
+Slack:                  17.899ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               myBlinker/M_counter_q_3 (FF)
+  Destination:          myBlinker/M_counter_q_24 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      2.060ns (Levels of Logic = 7)
+  Clock Path Skew:      -0.006ns (0.332 - 0.338)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: myBlinker/M_counter_q_3 to myBlinker/M_counter_q_24
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X4Y7.DQ        Tcko                  0.525   myBlinker/M_counter_q[3]
+                                                       myBlinker/M_counter_q_3
+    SLICE_X4Y7.D5        net (fanout=1)        0.448   myBlinker/M_counter_q[3]
+    SLICE_X4Y7.COUT      Topcyd                0.312   myBlinker/M_counter_q[3]
+                                                       myBlinker/M_counter_q[3]_rt
+                                                       myBlinker/Mcount_M_counter_q_cy<3>
+    SLICE_X4Y8.CIN       net (fanout=1)        0.082   myBlinker/Mcount_M_counter_q_cy[3]
+    SLICE_X4Y8.COUT      Tbyp                  0.093   myBlinker/M_counter_q[7]
+                                                       myBlinker/Mcount_M_counter_q_cy<7>
+    SLICE_X4Y9.CIN       net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[7]
+    SLICE_X4Y9.COUT      Tbyp                  0.093   myBlinker/M_counter_q[11]
+                                                       myBlinker/Mcount_M_counter_q_cy<11>
+    SLICE_X4Y10.CIN      net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[11]
+    SLICE_X4Y10.COUT     Tbyp                  0.093   myBlinker/M_counter_q[15]
+                                                       myBlinker/Mcount_M_counter_q_cy<15>
+    SLICE_X4Y11.CIN      net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[15]
+    SLICE_X4Y11.COUT     Tbyp                  0.093   myBlinker/M_counter_q[19]
+                                                       myBlinker/Mcount_M_counter_q_cy<19>
+    SLICE_X4Y12.CIN      net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[19]
+    SLICE_X4Y12.COUT     Tbyp                  0.093   myBlinker/M_counter_q[23]
+                                                       myBlinker/Mcount_M_counter_q_cy<23>
+    SLICE_X4Y13.CIN      net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[23]
+    SLICE_X4Y13.CLK      Tcinck                0.213   M_counter_q_27
+                                                       myBlinker/Mcount_M_counter_q_xor<27>
+                                                       myBlinker/M_counter_q_24
+    -------------------------------------------------  ---------------------------
+    Total                                      2.060ns (1.515ns logic, 0.545ns route)
+                                                       (73.5% logic, 26.5% route)
+
+--------------------------------------------------------------------------------
+Slack:                  17.902ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               myBlinker/M_counter_q_1 (FF)
+  Destination:          myBlinker/M_counter_q_26 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      2.057ns (Levels of Logic = 7)
+  Clock Path Skew:      -0.006ns (0.332 - 0.338)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: myBlinker/M_counter_q_1 to myBlinker/M_counter_q_26
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X4Y7.BQ        Tcko                  0.525   myBlinker/M_counter_q[3]
+                                                       myBlinker/M_counter_q_1
+    SLICE_X4Y7.B5        net (fanout=1)        0.215   myBlinker/M_counter_q[1]
+    SLICE_X4Y7.COUT      Topcyb                0.483   myBlinker/M_counter_q[3]
+                                                       myBlinker/M_counter_q[1]_rt
+                                                       myBlinker/Mcount_M_counter_q_cy<3>
+    SLICE_X4Y8.CIN       net (fanout=1)        0.082   myBlinker/Mcount_M_counter_q_cy[3]
+    SLICE_X4Y8.COUT      Tbyp                  0.093   myBlinker/M_counter_q[7]
+                                                       myBlinker/Mcount_M_counter_q_cy<7>
+    SLICE_X4Y9.CIN       net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[7]
+    SLICE_X4Y9.COUT      Tbyp                  0.093   myBlinker/M_counter_q[11]
+                                                       myBlinker/Mcount_M_counter_q_cy<11>
+    SLICE_X4Y10.CIN      net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[11]
+    SLICE_X4Y10.COUT     Tbyp                  0.093   myBlinker/M_counter_q[15]
+                                                       myBlinker/Mcount_M_counter_q_cy<15>
+    SLICE_X4Y11.CIN      net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[15]
+    SLICE_X4Y11.COUT     Tbyp                  0.093   myBlinker/M_counter_q[19]
+                                                       myBlinker/Mcount_M_counter_q_cy<19>
+    SLICE_X4Y12.CIN      net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[19]
+    SLICE_X4Y12.COUT     Tbyp                  0.093   myBlinker/M_counter_q[23]
+                                                       myBlinker/Mcount_M_counter_q_cy<23>
+    SLICE_X4Y13.CIN      net (fanout=1)        0.003   myBlinker/Mcount_M_counter_q_cy[23]
+    SLICE_X4Y13.CLK      Tcinck                0.272   M_counter_q_27
+                                                       myBlinker/Mcount_M_counter_q_xor<27>
+                                                       myBlinker/M_counter_q_26
+    -------------------------------------------------  ---------------------------
+    Total                                      2.057ns (1.745ns logic, 0.312ns route)
+                                                       (84.8% logic, 15.2% route)
+
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: TS_clk = PERIOD TIMEGRP "clk" 50 MHz HIGH 50%;
+--------------------------------------------------------------------------------
+Slack: 17.334ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 2.666ns (375.094MHz) (Tbcper_I)
+  Physical resource: clk_BUFGP/BUFG/I0
+  Logical resource: clk_BUFGP/BUFG/I0
+  Location pin: BUFGMUX_X2Y11.I0
+  Clock network: clk_BUFGP/IBUFG
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: myBlinker/M_counter_q[3]/CLK
+  Logical resource: myBlinker/M_counter_q_0/CK
+  Location pin: SLICE_X4Y7.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: myBlinker/M_counter_q[3]/CLK
+  Logical resource: myBlinker/M_counter_q_1/CK
+  Location pin: SLICE_X4Y7.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: myBlinker/M_counter_q[3]/CLK
+  Logical resource: myBlinker/M_counter_q_2/CK
+  Location pin: SLICE_X4Y7.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: myBlinker/M_counter_q[3]/CLK
+  Logical resource: myBlinker/M_counter_q_3/CK
+  Location pin: SLICE_X4Y7.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: myBlinker/M_counter_q[7]/CLK
+  Logical resource: myBlinker/M_counter_q_4/CK
+  Location pin: SLICE_X4Y8.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: myBlinker/M_counter_q[7]/CLK
+  Logical resource: myBlinker/M_counter_q_5/CK
+  Location pin: SLICE_X4Y8.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: myBlinker/M_counter_q[7]/CLK
+  Logical resource: myBlinker/M_counter_q_6/CK
+  Location pin: SLICE_X4Y8.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: myBlinker/M_counter_q[7]/CLK
+  Logical resource: myBlinker/M_counter_q_7/CK
+  Location pin: SLICE_X4Y8.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: myBlinker/M_counter_q[11]/CLK
+  Logical resource: myBlinker/M_counter_q_8/CK
+  Location pin: SLICE_X4Y9.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: myBlinker/M_counter_q[11]/CLK
+  Logical resource: myBlinker/M_counter_q_9/CK
+  Location pin: SLICE_X4Y9.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: myBlinker/M_counter_q[11]/CLK
+  Logical resource: myBlinker/M_counter_q_10/CK
+  Location pin: SLICE_X4Y9.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: myBlinker/M_counter_q[11]/CLK
+  Logical resource: myBlinker/M_counter_q_11/CK
+  Location pin: SLICE_X4Y9.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: myBlinker/M_counter_q[15]/CLK
+  Logical resource: myBlinker/M_counter_q_12/CK
+  Location pin: SLICE_X4Y10.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: myBlinker/M_counter_q[15]/CLK
+  Logical resource: myBlinker/M_counter_q_13/CK
+  Location pin: SLICE_X4Y10.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: myBlinker/M_counter_q[15]/CLK
+  Logical resource: myBlinker/M_counter_q_14/CK
+  Location pin: SLICE_X4Y10.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: myBlinker/M_counter_q[15]/CLK
+  Logical resource: myBlinker/M_counter_q_15/CK
+  Location pin: SLICE_X4Y10.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: myBlinker/M_counter_q[19]/CLK
+  Logical resource: myBlinker/M_counter_q_16/CK
+  Location pin: SLICE_X4Y11.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: myBlinker/M_counter_q[19]/CLK
+  Logical resource: myBlinker/M_counter_q_17/CK
+  Location pin: SLICE_X4Y11.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: myBlinker/M_counter_q[19]/CLK
+  Logical resource: myBlinker/M_counter_q_18/CK
+  Location pin: SLICE_X4Y11.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: myBlinker/M_counter_q[19]/CLK
+  Logical resource: myBlinker/M_counter_q_19/CK
+  Location pin: SLICE_X4Y11.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: myBlinker/M_counter_q[23]/CLK
+  Logical resource: myBlinker/M_counter_q_20/CK
+  Location pin: SLICE_X4Y12.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: myBlinker/M_counter_q[23]/CLK
+  Logical resource: myBlinker/M_counter_q_21/CK
+  Location pin: SLICE_X4Y12.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: myBlinker/M_counter_q[23]/CLK
+  Logical resource: myBlinker/M_counter_q_22/CK
+  Location pin: SLICE_X4Y12.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: myBlinker/M_counter_q[23]/CLK
+  Logical resource: myBlinker/M_counter_q_23/CK
+  Location pin: SLICE_X4Y12.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: M_counter_q_27/CLK
+  Logical resource: myBlinker/M_counter_q_24/CK
+  Location pin: SLICE_X4Y13.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: M_counter_q_27/CLK
+  Logical resource: myBlinker/M_counter_q_25/CK
+  Location pin: SLICE_X4Y13.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: M_counter_q_27/CLK
+  Logical resource: myBlinker/M_counter_q_26/CK
+  Location pin: SLICE_X4Y13.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: M_counter_q_27/CLK
+  Logical resource: myBlinker/M_counter_q_27/CK
+  Location pin: SLICE_X4Y13.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.530ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.470ns (2127.660MHz) (Tcp)
+  Physical resource: reset_cond/M_stage_q[2]/CLK
+  Logical resource: reset_cond/M_stage_q_3/CK
+  Location pin: SLICE_X5Y7.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+
+
+All constraints were met.
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    2.371|         |         |         |
+---------------+---------+---------+---------+---------+
+
+
+Timing summary:
+---------------
+
+Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
+
+Constraints cover 437 paths, 0 nets, and 53 connections
+
+Design statistics:
+   Minimum period:   2.666ns{1}   (Maximum frequency: 375.094MHz)
+
+
+------------------------------------Footnotes-----------------------------------
+1)  The minimum period statistic assumes all single cycle delays.
+
+Analysis completed Wed Sep 20 18:17:16 2017 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 171 MB
+
+
+

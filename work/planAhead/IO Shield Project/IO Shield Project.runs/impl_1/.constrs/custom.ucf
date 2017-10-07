@@ -1,0 +1,8 @@
+NET "button" LOC = P50;
+NET "button" IOSTANDARD = LVCMOS33;
+NET "ext_led[0]" LOC = P51;
+NET "ext_led[0]" IOSTANDARD = LVCMOS33;
+NET "ext_led[1]" LOC = P41;
+NET "ext_led[1]" IOSTANDARD = LVCMOS33;
+NET "ext_led[2]" LOC = P40;
+NET "ext_led[2]" IOSTANDARD = LVCMOS33;
